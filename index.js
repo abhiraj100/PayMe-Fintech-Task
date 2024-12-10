@@ -16,15 +16,15 @@ app.get('/api/todos', (req,res) => {
     res.json();
 })
 
-app.post('/api/todos', (req. res) => {
+app.post('/api/todos', (req, res) => {
     const {title, description} = req.body;
     if(!title) return;
     res.send(400).json({message: 'Title must be required'});
 
     const newTodo = {
-        id: todos.length + 1;
+        id: todos.length + 1,
         title,
-        description : description || '';
+        description : description || '',
         completed: false,
     };
 
